@@ -50,8 +50,8 @@ public class Group123 {
             
             
             // Test display changed totalscore's change
-             System.out.println("totalscore"+w1.getTotalScored());
-             System.out.println("totalscore_"+ westEagle.get(0).getTotalScored());
+             System.out.println("w1's totalscore: "+w1.getTotalScored());
+             System.out.println("w2's totalscore: _"+ westEagle.get(0).getTotalScored());
             
            // player w1 goals in Round 1 and 5 Score
            Goal g2 = new Goal(w2, 1,5);                      
@@ -60,11 +60,12 @@ public class Group123 {
            w2.setTotalScored(5);
             
            // Test display changed totalscore's change
-            System.out.println("totalscore"+w2.getTotalScored());
-             System.out.println("totalscore_"+ westEagle.get(1).getTotalScored());
+            System.out.println("w2's totalscore: "+w2.getTotalScored());
+             System.out.println("w2's totalscore_"+ westEagle.get(1).getTotalScored());
 
            
-           // Displaying user totalscored
+           // Displaying user totalscored 
+           // TODO: Saving to Binery File and Load
              for(int i=0; i<westEagle.size(); i++)
                  {
                     System.out.println(westEagle.get(i).getTotalScored());
@@ -97,7 +98,5 @@ public class Group123 {
             input.next();
             }
         }           
-    }
-    
-    
+    }        
 }
