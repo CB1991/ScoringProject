@@ -13,10 +13,7 @@ import java.util.Scanner;
  * @author J378843
  */
 public class Group123 {
-
-   
-    
-    
+          
     /**
      * @param args the command line arguments
      */
@@ -54,10 +51,10 @@ public class Group123 {
              System.out.println("w2's totalscore: _"+ westEagle.get(0).getTotalScored());
             
            // player w1 goals in Round 1 and 5 Score
-           Goal g2 = new Goal(w2, 1,5);                      
+           Goal g2 = new Goal(w2, 1,6);                      
            
            // Change w2's Total Score
-           w2.setTotalScored(5);
+           w2.setTotalScored(6);
             
            // Test display changed totalscore's change
             System.out.println("w2's totalscore: "+w2.getTotalScored());
