@@ -66,15 +66,10 @@ public class Group123 {
                       for(int i=0; i<westEagle.size(); i++)
                           {
                              System.out.println(westEagle.get(i).getTotalScored());
+                                                                                
                           }
+                                                          
          
-                  // Test display changed totalscore's change
-                System.out.println("w1's totalscore: "+w1.getTotalScored());
-                System.out.println("w2's totalscore: _"+ westEagle.get(0).getTotalScored());
-                  
-                  // Test display changed totalscore's change
-            System.out.println("w2's totalscore: "+w2.getTotalScored());
-             System.out.println("w2's totalscore_"+ westEagle.get(1).getTotalScored());
                   
                 break;
             case 2:      
@@ -88,21 +83,32 @@ public class Group123 {
           System.out.println("Who has goal?");                             
           int whosegoal=input.nextInt();
           Goal g1 = new Goal();          
-          g1.setWhoGoal(w1);
-          g1.setWhichRound(1);
-          g1.setScore(1);
-                            
-           System.out.println("w1's totalscore: "+w1.getTotalScored());
-              
-           // Change w1's Total Score
-            w1.setTotalScored(1);
-                 
+          g1.setWhoGoal(westEagle.get(whosegoal-1));
+          
+           System.out.println("Which round? 1. round1 , 2. round2, 3.round3, 4.round4");                             
+          int whichRound=input.nextInt();                    
+          g1.setWhichRound(whichRound);
+          
+           System.out.println("How many point? 1. 1point , 6. 6points");                             
+          int howManyPoint=input.nextInt();                              
+          g1.setScore(howManyPoint);
+                    // Change w1's Total Score
+                          goalList.add(g1);
+                          
+                               for(int i=0; i<goalList.size(); i++)
+                {
+                          System.out.println ("\nwhose goal?"+ goalList.get(i).getWhoGoal() +
+                                              "\nwhichRound goal?"+ goalList.get(i).getWhichRound() +
+                                              "\nHow many points?"+ goalList.get(i).getScore() 
+                          );  
+                }
             
-           // player w1 goals in Round 1 and 6 Score
-           Goal g2 = new Goal(w2, 1,6);                      
-           
-           // Change w2's Total Score
-           w2.setTotalScored(6);
+//            
+//           // player w1 goals in Round 1 and 6 Score
+//           Goal g2 = new Goal(w2, 1,6);                      
+//           2
+//           // Change w2's Total Score
+//           w2.setTotalScored(6);
                 
                 break;                
             case  3:                                                                      
