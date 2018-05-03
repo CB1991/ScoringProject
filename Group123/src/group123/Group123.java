@@ -27,12 +27,14 @@ public class Group123 {
      
                 
         ArrayList<Player> westEagle = new ArrayList<Player>();
+        ArrayList<Goal> goalList = new ArrayList<Goal>();
         
-           Player w1 = new Player(1,"PlayerName","West Eagle",1,0);
-           Player w2 = new Player(1,"PlayerName","West Eagle",1,0); 
-           Player w3 = new Player(1,"PlayerName","West Eagle",1,0);
-           Player w4 = new Player(1,"PlayerName","West Eagle",1,0); 
-           Player w5 = new Player(1,"PlayerName","West Eagle",1,0);
+        
+           Player w1 = new Player(1,"Choongbae","West Eagle",1,0);
+           Player w2 = new Player(2,"Han","West Eagle",1,0); 
+           Player w3 = new Player(3,"Peter","West Eagle",1,0);
+           Player w4 = new Player(4,"Ivone","West Eagle",1,0); 
+           Player w5 = new Player(5,"Adrian","West Eagle",1,0);
                                             
            westEagle.add(w1);
            westEagle.add(w2);
@@ -41,11 +43,9 @@ public class Group123 {
            westEagle.add(w5);
                                  
         // TODO code application logic here
-         
-        
+                 
         while(isUserGoOn==true){        
-       
-            
+                   
             // Create Read Update Delete
             System.out.println("Welcome to Footy recording"
             + "\nPress number "
@@ -79,15 +79,26 @@ public class Group123 {
                 break;
             case 2:      
                    //(String whoGoal, int whichRound, int score)
-        
-           // player w1 goals in Round 1 and 1 Score
-           Goal g1 = new Goal(w1, 1,1);
-           
+         
+                for(int i=0; i<westEagle.size(); i++)
+                {
+                          System.out.println(i+1+"-Which Player :"+westEagle.get(i).getPlayerName());  
+                }
+                
+          System.out.println("Who has goal?");                             
+          int whosegoal=input.nextInt();
+          Goal g1 = new Goal();          
+          g1.setWhoGoal(w1);
+          g1.setWhichRound(1);
+          g1.setScore(1);
+                            
+           System.out.println("w1's totalscore: "+w1.getTotalScored());
+              
            // Change w1's Total Score
             w1.setTotalScored(1);
                  
             
-           // player w1 goals in Round 1 and 5 Score
+           // player w1 goals in Round 1 and 6 Score
            Goal g2 = new Goal(w2, 1,6);                      
            
            // Change w2's Total Score
