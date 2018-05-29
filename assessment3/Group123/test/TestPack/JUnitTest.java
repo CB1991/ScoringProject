@@ -5,6 +5,7 @@
  */
 package TestPack;
 
+import group123.TestFile;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -38,7 +39,10 @@ public class JUnitTest {
     }
 
      @Test
-    public void hello() {
+    public void testingFile() {
+        TestFile test = new TestFile();
+        String result = test.concattenate("one", "two");
+        assertEquals("onetwo",result);
     
     }
 }

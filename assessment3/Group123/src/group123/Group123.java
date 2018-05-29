@@ -34,7 +34,7 @@ public class Group123 {
             + "\n1. Display ScoreCard "
             + "\n2. Add Scores "
             + "\n3. Clear saved data"
-            + "\n5. Save and Exit");
+            + "\n4. Save and Exit");
          Scanner input = new Scanner(System.in);    
          
          //try catch for error handling
@@ -45,7 +45,6 @@ public class Group123 {
             case 1:   
                 //display the scoreCard
                 System.out.println(service.displayScoreCard(service.getPlayerScore()));
-                System.out.println(service.Total(service.getPlayerScore()));
                 break;
                 
             case 2:
@@ -79,7 +78,7 @@ public class Group123 {
                     System.out.println("Deletion successful.");
                 break;
                 
-            case 5:
+            case 4:
                 return;
           
                 

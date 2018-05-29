@@ -28,7 +28,9 @@ public class Service {
      */
     public String displayScoreCard(Player[][] arrangement) {
         //separator
-        String displayer = "\n\n       ";
+        
+        int zero = 0;
+           String displayer = "\n\n       ";
         
        //this for loop will display the HEADERS in order
        for (int i = 0; i < 5; i++) {
@@ -48,11 +50,62 @@ public class Service {
                 { 
                     displayer += " " + arrangement[x][y].getScore()+ "     ";
                 }
-                else { displayer += " -     "; }
+                //else { displayer += " -     "; }
+                else {displayer += " " + zero + "     ";}
             }
             displayer += "\n";
         }
-        return displayer;
+    
+    
+        
+      
+        /*for(int i=0; i<4; i++)
+        {
+            for(int j=0; j<4; j++){
+            if(arrangement[i][j].getScore() == 0)
+                {
+                   arrangement[i][j].setScore(0);
+                }
+            }
+        }*/
+                //int score1 = arrangement[0][0].getScore();
+             
+               
+              
+                  //int playerTwoTotal = arrangement[1][0].getScore() +arrangement[1][1].getScore()+arrangement[1][2].getScore()+arrangement[1][3].getScore() ;
+                  int playerOneTotal = 0;
+                  for (int i =0; i<4; i++) {
+                      if (arrangement[0][i] != null) 
+                        playerOneTotal += arrangement[0][i].getScore();
+                  }
+                  
+                  int playerTwoTotal = 0;
+                  for (int i =0; i<4; i++) {
+                      if (arrangement[1][i] != null) 
+                        playerTwoTotal += arrangement[1][i].getScore();
+                  }
+                  
+                  int playerThreeTotal = 0;
+                  for (int i =0; i<4; i++) {
+                      if (arrangement[2][i] != null) 
+                        playerTwoTotal += arrangement[2][i].getScore();
+                  }
+                  
+                  int playerFourTotal = 0;
+                  for (int i =0; i<4; i++) {
+                      if (arrangement[3][i] != null) 
+                        playerTwoTotal += arrangement[3][i].getScore();
+                  }
+                     //int playerThreeTotal = arrangement[2][0].getScore() +arrangement[2][1].getScore()+arrangement[2][2].getScore()+arrangement[2][3].getScore() ;
+                        //int playerFourTotal = arrangement[3][0].getScore() +arrangement[3][1].getScore()+arrangement[3][2].getScore()+arrangement[3][3].getScore() ;
+               
+                        
+                       
+        return displayer + "PLAYER 1 Total Score = " + playerOneTotal + '\n' +
+                "PLAYER 2 Total Score = " + playerTwoTotal + '\n'  +"PLAYER 3 Total Score = " + playerThreeTotal + '\n' + "PLAYER 4 Total Score = " + playerFourTotal;//arrangement[0][0].getScore() +arrangement[0][1].getScore()+arrangement[0][2].getScore()+arrangement[0][3].getScore() ;
+        
+
+        
     }
     
      
@@ -147,11 +200,9 @@ public class Service {
                  if(player.getWhichRound() == 4)
                  {
                      if (arrangement[row][3] == null) { selectedColumn = 3; }
+                 }                      
                  }
-                     
- 
-                 }
-            }
+            } // for loop 
             
            
 
@@ -169,17 +220,26 @@ public class Service {
                 saveScore(arrangement);
                 storeScoreCardDisplayer(player.getScore(), selectedRow*4 + selectedColumn + 1);
                 System.out.println("Score successfully assigned.");
+           
+                
             }
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         } finally {
-            
+            System.out.println("Press ENTER to continue...");
             scanner.nextLine();
         }
     }
       
       //Here the user will be able to choose to which player he/she wants to assign Score to, and at which round as well
 
+      public void displayTotalScore()
+      {
+       
+        
+            
+      }
+      
     /**
      *
      */
@@ -246,6 +306,8 @@ public class Service {
             scanner.nextLine();
         }
      }
+    
+     
 }
 
     
